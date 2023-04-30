@@ -1,6 +1,6 @@
 # React-Redux [![My Skills](https://skillicons.dev/icons?i=redux)](https://skillicons.dev)
 
-A dummy website using React and React-Redux libraries.
+A dummy website using React, React-Redux, and Redux-Toolkit libraries.
 
 ### Core Redux Concepts
 

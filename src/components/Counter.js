@@ -4,7 +4,9 @@ import classes from "./Counter.module.css";
 
 const Counter = () => {
   const dispatch = useDispatch();
+
   const counter = useSelector((state) => state.counter);
+  const show = useSelector((state) => state.showCounter);
   // pass a function to "useSelector"
   // A function determines which piece of data we want to extract from our store.
   // A fucntion which receives the state managed by Redux
@@ -21,12 +23,14 @@ const Counter = () => {
   const decrementHandler = () => {
     dispatch({ type: "decrement" });
   };
-  const toggleCounterHandler = () => {};
+  const toggleCounterHandler = () => {
+    dispatch({ type: "toggle" });
+  };
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{counter}</div>
+      {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={increaseHandler}>Increase</button>

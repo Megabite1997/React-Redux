@@ -6,6 +6,15 @@ const initialState = { counter: 0, showCounter: true };
 // Reducer function, will have 2 params, 'state' and 'action'.
 const counterReducer = (state = initialState, action) => {
   if (action.type === "increment") {
+    // state.counter++
+    // return{
+    //   counter: state.counter
+    // }
+    // Do not mutate the existing state directly, it could lead to bug.
+    //Should return new object value like below
+
+    // ----------------------------
+
     return {
       counter: state.counter + 1,
       showCounter: state.showCounter,

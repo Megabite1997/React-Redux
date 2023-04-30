@@ -1,11 +1,12 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 // "createSlice" is more powerful than "createReducer"
 
-const initialState = { counter: 0, showCounter: true };
+const initialCounterState = { counter: 0, showCounter: true };
+const initialAuthState = { isAuthenticated: false };
 
 const counterSlice = createSlice({
   name: "counter",
-  initialState,
+  initialState: initialCounterState,
   reducers: {
     // Every method here will automatically receive the latest state.
     increment(state) {
@@ -33,16 +34,30 @@ const counterSlice = createSlice({
 //*** to make our code maintainable.
 // It must have 3 keys, "name", "initialState", and "reducers".
 
+const authSlice = createSlice({
+  name: "authentication",
+  initialState: initialAuthState,
+  reducers: {
+    login(state) {
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
+  },
+});
+
 // Questions
 // 1) How to make our store aware of this slice?
 // 2) How to dispatch "actions" against this slice?
 
 //  Answer 1)
 const store = configureStore({
-  reducer: counterSlice.reducer,
+  reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
 });
 
 // Answer 2)
 export const counterActions = counterSlice.actions;
+export const authActions = authSlice.actions;
 
 export default store;

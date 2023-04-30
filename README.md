@@ -6,7 +6,7 @@ A dummy website using React and React-Redux libraries.
 
 <img width="1872" alt="Core Redux Concepts" src="https://user-images.githubusercontent.com/51529613/235337635-445d03ee-9411-43f9-9dab-6bed30309055.png">
 
-There is a slightly easier way of using 'Redux' as well.
+### There is a slightly easier way of using 'Redux' as well.
 
 A couple problems we could be facing here, if our application would continue to grow.
 
@@ -22,7 +22,7 @@ A couple problems we could be facing here, if our application would continue to 
 
 3. Third potential issue is "state immutability"
 
-Solutions
+### Solutions
 
 1. "action types", create a constant to store "action type" identifier such as "const INCREMENT = 'increment' ", use in "reducer" and export to use in the components that have dispatch "action type".
 

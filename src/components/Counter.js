@@ -4,7 +4,7 @@ import { counterActions } from "../store/index2";
 import classes from "./Counter.module.css";
 
 const Counter = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // execute 'useDispatch' to get access to dispatch function.
 
   const counter = useSelector((state) => state.counter.counter);
   const show = useSelector((state) => state.counter.showCounter);

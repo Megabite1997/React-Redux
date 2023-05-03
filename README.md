@@ -25,3 +25,11 @@ A couple problems we could be facing here, if our application would continue to 
 ### <ins>Solution</ins>
 
 Use "Redux Toolkit" library, which makes working with Redux more convenient and easier. Uninstall "Redux" because that is already included in "Redux toolkit"
+
+
+### What is an '<ins>action creator<ins>'?
+
+When you create a slice, "createSlice", which has reducer functions. The "action creator" will be created automatically when you create a reducer function, They are going to have the same name as reducer functions. For example,
+
+<img width="1340" alt="Untitled" src="https://user-images.githubusercontent.com/51529613/235935462-06ab42c5-bad3-4fcd-a9fa-1bdeda3d43b7.png">
+
